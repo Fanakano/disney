@@ -1,0 +1,24 @@
+<template>
+	<div class="app slds-p-around_x-large">
+		<h1 class="slds-text-heading_large">Personagens da Disney</h1>
+		<!-- Com template -->
+		<template for:each={listaDisney} for:item='personagem'>
+			<div key={personagem.cod}>
+				<p>Nome:{personagem.nome}</p>
+				<p>Desenho:{personagem.desenho}</p>
+				<p>Força:{personagem.forca}</p>
+				<p>Agilidade:{personagem.agilidade}</p>
+				<p>Inteligência:{personagem.inteligência}</p>
+				<p>Beleza:{personagem.beleza}</p>
+			</div>
+		</template>
+
+
+		<!-- usando o datatable -->
+		<div style="height: 300px;">
+			<lightning-datatable key-field="cod" data={listaDisney} columns={columns}>
+			</lightning-datatable>
+		</div>
+
+	</div>
+</template>
